@@ -17,19 +17,6 @@ public class SfgDiApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 		String greeting = myController.sayHello();
 		System.out.println(greeting);
-
-		System.out.println("----- Property based controller");
-		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
-		System.out.println(propertyInjectedController.getGreeting());
-
-		System.out.println("----- Setter based controller");
-		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
-		System.out.println(setterInjectedController.getGreeting());
-
-		System.out.println("----- Constructor based controller");
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreeting());
-
 	}
 
 }
