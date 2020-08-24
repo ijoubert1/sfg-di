@@ -1,4 +1,4 @@
-package local.springframework.sfgdi.services;
+package local.services;
 
 public interface GreetingService {
     String sayGreeting();
