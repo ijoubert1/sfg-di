@@ -1,10 +1,10 @@
 package local.springframework.sfgdi;
 
-import local.springframework.sfgdi.controllers.*;
+import local.springframework.sfgdi.controllers.MyController;
+import local.springframework.sfgdi.exampleBean.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -12,6 +12,7 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
+		/*
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
 
@@ -30,6 +31,11 @@ public class SfgDiApplication {
 		System.out.println("----- Constructor based controller");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+		*/
+
+		MyController myController = (MyController) ctx.getBean("myController");
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUser());
 
 	}
 
