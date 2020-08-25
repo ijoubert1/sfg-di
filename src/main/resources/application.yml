@@ -1,0 +1,4 @@
+local:
+  user: User
+  pass: asdf
+  url: "url@server"
